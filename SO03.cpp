@@ -20,19 +20,19 @@ int main(){
       cin >> s;
       soldier.push_back(s);
     }
-    sort(enemy.begin(), enemy.end());
-    sort(soldier.begin(), soldier.end());
+    sort(enemy.begin(), enemy.end());//排序
+    sort(soldier.begin(), soldier.end());//排序
 
     for (int i = 0, j = 0; i < soldier.size(); i++, j++){
-      if(soldier[i] > enemy[j]){
+      if(soldier[i] > enemy[j]){//士兵打得贏敵人
         cnt++;
-        soldier.erase(soldier.begin());
+        soldier.erase(soldier.begin());//兩個抵銷
         enemy.erase(enemy.begin());
         i--;
         j--;
       }
       else{
-        soldier.erase(soldier.begin());
+        soldier.erase(soldier.begin());//打不贏就往後找下一個士兵來
         i--;
         j--;
       }
