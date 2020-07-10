@@ -17,16 +17,16 @@ int main(){
     for (int l =1; l<q;l++){
       if(k!=l){
         for (int j = 0; j < x[l].size(); j++){
-          ans += pow(x[l][j] - x[k][j], 2);
-          total = total + x[l][j] + x[k][j];
+          ans += pow(x[l][j] - x[k][j], 2);//算距離總和
+          total = total + x[l][j] + x[k][j];//算數字總和
         }
-        if(ans < min){
+        if(ans < min){//找最短距離存進去
           min = ans;
           mini = k;
           minj = l;
           total2 = total;
         }
-        else if(ans == min){
+        else if(ans == min){//距離一樣就比數字大小
           if(total < total2){
             min = ans;
             mini = k;
