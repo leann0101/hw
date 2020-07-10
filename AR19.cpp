@@ -6,10 +6,10 @@ int main(){
   int i, input, b, a, test;
   while(cin >> input){
     for (i = 100000; i >= 1; i--){
-      b = pow(i, 2);
-      a = input / b;
-      test = sqrt(a);
-      if((a!=test*test||a==1) && input==a*b){
+      b = pow(i, 2);//i平方，i就是B
+      a = input / b;//原本的數除以i平方找出A
+      test = sqrt(a);//A開根號
+      if((a!=test*test||a==1) && input==a*b){//如果A是Square-free 或是1，A*i*i=輸入的數，就代表找到了
         break;
       }
     }
