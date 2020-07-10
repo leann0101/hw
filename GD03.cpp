@@ -13,11 +13,11 @@ int main(){
     cin >> m;
     pkt.push_back(m);
   }
-  sort(pkt.begin(), pkt.end());
+  sort(pkt.begin(), pkt.end());//排序pkt從小的開始送
   for (int k = 0; k < pkt.size();k++){
-    cnt += pkt[k];
+    cnt += pkt[k];//送過去要算
     for (int h = 0; h < k;h++){
-      cnt += pkt[h] * 2;
+      cnt += pkt[h] * 2;//下一個人還要等他送過去再回來的時間
     }
   }
   cout << cnt << endl;
