@@ -6,9 +6,9 @@ int main(){
   int ans, i=0;
   while(cin.getline(c, 1000)){
     while(c[i] != '\0'){
-      ans = int(c[i]);
-      ans = ans - 3;
-      c[i] = char(ans);
+      ans = int(c[i]);//換成ASCII碼
+      ans = ans - 3;//ASCII碼減三就是
+      c[i] = char(ans);//在換回char
       i++;
     }
     cout << c << endl;
