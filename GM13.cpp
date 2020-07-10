@@ -20,17 +20,17 @@ int main()
         num = 0;
         for (int j = 0; j < point; ++j)
         {
-            //test if the point is a maxima
-            bool maxima = true;
+            
+            bool maxima = true;//測試是不是 maxima
             for (int k = 0; k < point; ++k)
             {
-                if ((arr[k].x > arr[j].x) && (arr[k].y > arr[j].y))
+                if ((arr[k].x > arr[j].x) && (arr[k].y > arr[j].y))//別的數字的xy比較大
                 {
-                    maxima = false;
+                    maxima = false;//不是
                     break;
                 }
             }
-            if (maxima)
+            if (maxima)//是的話num加一
                 ++num;
         }
         cout << num << endl;
