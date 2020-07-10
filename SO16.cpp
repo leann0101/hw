@@ -15,7 +15,7 @@ int main(){
       cin >> num;
       a.push_back(num);
     }
-    sort(a.rbegin(), a.rend());
-    cout << a[k - 1] << endl;
+    sort(a.rbegin(), a.rend());//反著排序大到小
+    cout << a[k - 1] << endl;//找出第k大的數ˋ
   }
 }
