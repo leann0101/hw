@@ -5,14 +5,14 @@
 using namespace std;
 
 unsigned int test(string a){
-  if(a=="correct")
+  if(a=="correct")//corret加十分
     return 10;
-  else if (a=="wrong")
+  else if (a=="wrong")//wrong扣十分
     return -10;
-  else if(a=="give-up")
+  else if(a=="give-up")//giveup沒分
     return 0;
   else
-    return 20;
+    return 20;//輸入錯誤
 }
 
 struct In { 
@@ -30,13 +30,13 @@ int main(){
   unsigned int q;
   string a;
   cin >> q;
-  In[0].team= 1;
+  In[0].team= 1;//team是隊伍編號
   In[1].team= 2;
   In[2].team= 3;
   for (int i = 1; i <= q;i++){
     cin >> a;
-    if(test(a)!=20)
-      In[0].num+= test(a);
+    if(test(a)!=20)//沒輸入錯時
+      In[0].num+= test(a);//加上分數(共有三個)
     cin >> a;
     if(test(a)!=20)
       In[1].num+= test(a);
@@ -44,7 +44,7 @@ int main(){
     if(test(a)!=20)
       In[2].num+= test(a);
   }
-  qsort(In,3,sizeof(In[0]),cmp);
+  qsort(In,3,sizeof(In[0]),cmp);//照分數大到小排序
   cout << "(" << In[0].team << "," << In[0].num << ")";
   if(In[0].num != In[1].num)
     cout << "\n";
