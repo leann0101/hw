@@ -11,11 +11,11 @@ struct runner{
   int sec;
 };
 
-int cmp( const void *a , const void *b ){
+int cmp( const void *a , const void *b ){//排序的程式
   struct runner *c = (runner *)a;
   struct runner *d = (runner *)b;
-  if(c->min != d->min) return c->min - d->min;
-  else return c->sec - d->sec;
+  if(c->min != d->min) return c->min - d->min;//先比較分鐘
+  else return c->sec - d->sec;//再比秒數
 }
 
 int main(){
@@ -25,7 +25,7 @@ int main(){
   while(cin >> runner[i].number >> runner[i].min >> no[0] >> runner[i].sec){
     i++;
   }
-  qsort(runner,i,sizeof(runner[0]),cmp);
+  qsort(runner,i,sizeof(runner[0]),cmp);//排序
   for (int i = 0; i < 3; i++)
     cout << runner[i].number << " " << runner[i].min << "\'" << runner[i].sec << endl;
 }
